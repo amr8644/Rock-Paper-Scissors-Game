@@ -26,6 +26,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  text-transform: uppercase;
 }
 
 .header {
@@ -121,8 +122,8 @@ body {
 .rock,
 .paper,
 .scissors {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 99999px;
   cursor: pointer;
   background-color: #fff;
@@ -136,21 +137,21 @@ body {
   background-image: url(./images/icon-rock.svg);
   background-repeat: no-repeat;
   background-position: center;
-  border: 10px solid var(--Rock-Gradient);
+  border: 20px solid var(--Rock-Gradient);
 }
 .paper {
   background-image: url(./images/icon-paper.svg);
   background-repeat: no-repeat;
   background-position: center;
   outline: none;
-  border: 10px solid var(--Paper-Gradient);
+  border: 20px solid var(--Paper-Gradient);
 }
 .scissors {
   background-image: url(./images/icon-scissors.svg);
   background-repeat: no-repeat;
   background-position: center;
   outline: none;
-  border: 10px solid var(--Scissors-Gradient);
+  border: 20px solid var(--Scissors-Gradient);
 }
 
 .last {
@@ -242,6 +243,59 @@ body {
   margin-left: 15px;
 }
 
+/* .in-game {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 320px;
+  margin-top: 40px;
+  color: #fff;
+} */
+.player-pick,
+.house-pick {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+  color: #fff;
+  font-size: 32px;
+}
+
+.play-again {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.play-again h1 {
+  font-size: 52px;
+  color: #fff;
+}
+.play-again-btn {
+  width: 190px;
+  height: 55px;
+  background: #fff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: 1px solid var(--Header-Outline);
+  cursor: pointer;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: red;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.play-again-btn:hover {
+  transform: scale(1.03);
+}
+
 @media screen and (max-width: 950px) {
   .title {
     width: 90%;
@@ -253,11 +307,19 @@ body {
   .paper-scissors {
     width: 60%;
   }
+  .player-pick h1,
+  .house-pick h1 {
+    font-size: 32px;
+  }
 }
 @media screen and (max-width: 768px) {
   .items {
     width: 55%;
     height: 60%;
+  }
+  .player-pick,
+  .house-pick {
+    width: 60%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -266,15 +328,15 @@ body {
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 553px) {
   .paper-scissors {
     width: 90%;
   }
   .rock,
   .paper,
   .scissors {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
   }
   .score {
     width: 130px;
@@ -295,6 +357,21 @@ body {
   .items {
     width: 85%;
   }
+  .player-pick,
+  .house-pick {
+    width: 70%;
+  }
+  .play-again h1 {
+    font-size: 35px;
+  }
+  .player-pick h1,
+  .house-pick h1 {
+    font-size: 22px;
+  }
+  .play-again-btn {
+    width: 160px;
+    height: 45px;
+  }
 }
 @media screen and (max-width: 450px) {
   .title {
@@ -313,6 +390,19 @@ body {
   }
   .items {
     width: 90%;
+  }
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+  .player-pick,
+  .house-pick {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .player-pick h1,
+  .house-pick h1 {
+    margin: 15px 0;
   }
 }
 @media screen and (max-width: 375px) {

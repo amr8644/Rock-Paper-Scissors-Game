@@ -11,6 +11,8 @@ const reset = document.querySelector(".reset");
 const rules = document.querySelector(".rules-btn");
 const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".close-btn");
+const mainSection = document.querySelector(".main");
+// const playAgain = document.getElementsByClassName("play-again-btn");
 
 function compChoice() {
   const options = ["rock", "paper", "scissors"];
@@ -27,19 +29,54 @@ function game(userChoice) {
     case "paperrock":
       let addPlayer = playerCount++;
       playerScore.innerHTML = `${addPlayer}`;
-      text.textContent = `${userChoice} beats ${computerChoice}. User Wins.`;
+      text.textContent = `${userChoice} beats ${computerChoice}.`;
+      mainSection.innerHTML = `<div class="player-pick">
+      <h1>You Picked</h1>
+      <button class="${userChoice}"></button>
+    </div>
+    <div class="play-again">
+    <h1> YOU WIN </h1>
+      <button class="play-again-btn" onclick="playAgain()">Play Again</button>
+    </div>
+    <div class="house-pick">
+      <h1>House Picked</h1>
+      <button class="${computerChoice}"></button>
+    </div>`;
       break;
     case "rockppaper":
     case "paperscissors":
     case "scissorsrock":
       let addComp = compCount++;
       compScore.innerHTML = `${addComp}`;
-      text.innerHTML = `${computerChoice} beats ${userChoice}. Comp Wins.`;
+      text.innerHTML = `${computerChoice} beats ${userChoice}.`;
+      mainSection.innerHTML = `<div class="player-pick">
+      <h1>You Picked</h1>
+      <button class="${userChoice}"></button>
+    </div>
+    <div class="play-again">
+    <h1> YOU LOSE </h1>
+      <button class="play-again-btn" onclick="playAgain()">Play Again</button>
+    </div>
+    <div class="house-pick">
+      <h1>House Picked</h1>
+      <button class="${computerChoice}"></button>
+    </div>`;
       break;
     case "rockrrock":
     case "paperpaper":
     case "scissorsscissors":
-      text.innerHTML = `It's a tie.`;
+      mainSection.innerHTML = `<div class="player-pick">
+      <h1>You Picked</h1>
+      <button class="${userChoice}"></button>
+    </div>
+    <div class="play-again">
+    <h1> IT'S A TIE </h1>
+      <button class="play-again-btn" onclick="playAgain()">Play Again</button>
+    </div>
+    <div class="house-pick">
+      <h1>House Picked</h1>
+      <button class="${computerChoice}"></button>
+    </div>`;
       break;
   }
 }
@@ -62,5 +99,8 @@ rules.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.classList.remove("show-modal");
 });
+function playAgain() {
+  location.reload();
+}
 
 main();
