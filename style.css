@@ -58,7 +58,8 @@ body {
   color: #fff;
   font-size: 30px;
 }
-.score {
+.user-score,
+.computer-score {
   width: 170px;
   height: 75%;
   display: flex;
@@ -69,11 +70,13 @@ body {
   border-radius: 10px;
   text-transform: uppercase;
 }
-.score h1 {
+.user-score h1,
+.computer-score h1 {
   color: var(--Dark-Text);
   font-size: 52px;
 }
-.score h5 {
+.user-score h5,
+.computer-score h5 {
   color: var(--Score-Text);
   font-size: 18px;
 }
@@ -127,6 +130,7 @@ body {
   border-radius: 99999px;
   cursor: pointer;
   background-color: #fff;
+  box-shadow: inset 0 5px rgba(0, 0, 0, 0.19);
 }
 .rock:hover,
 .paper:hover,
@@ -161,8 +165,9 @@ body {
   justify-content: flex-end;
 }
 
-.rules-btn {
-  margin-right: 30px;
+.rules-btn,
+.reset-score {
+  margin-right: 10px;
   width: 150px;
   height: 50px;
   background: transparent;
@@ -176,7 +181,8 @@ body {
   font-weight: 600;
   transition: all 0.3s ease-in-out;
 }
-.rules-btn:hover {
+.rules-btn:hover,
+.reset-score:hover {
   background-color: #fff;
   color: var(--Header-Outline);
 }
@@ -274,6 +280,7 @@ body {
 }
 .play-again h1 {
   font-size: 52px;
+  margin: 10px 0;
   color: #fff;
 }
 .play-btn {
@@ -287,7 +294,7 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 22px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   color: red;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -300,7 +307,8 @@ body {
   .title {
     width: 90%;
   }
-  .score {
+  .user-score,
+  .computer-score {
     width: 150px;
     height: 70%;
   }
@@ -341,7 +349,8 @@ body {
     width: 130px;
     height: 130px;
   }
-  .score {
+  .user-score,
+  .computer-score {
     width: 130px;
     height: 65%;
   }
@@ -351,10 +360,8 @@ body {
   .btns {
     width: 90%;
   }
-  .score h1 {
-    font-size: 52px;
-  }
-  .score h5 {
+  .user-score h5,
+  .computer-score h5 {
     font-size: 16px;
   }
   .items {
@@ -380,13 +387,19 @@ body {
   .paper-scissors {
     width: 96%;
   }
+  .last {
+    align-items: center;
+    justify-content: center;
+  }
 
-  .score {
+  .user-score,
+  .computer-score {
     width: 110px;
     height: 65%;
   }
-  .rules-btn {
-    margin: 40px 0;
+  .rules-btn,
+  .reset-score {
+    margin: 40px 10px;
   }
   .items {
     width: 90%;
@@ -394,15 +407,19 @@ body {
   .in-game {
     flex-direction: column;
     height: auto;
+    margin: 0;
   }
   .player-pick,
   .house-pick {
     width: 100%;
-    margin: 20px 0;
+    margin: 25px 0;
   }
   .player-pick h1,
   .house-pick h1 {
-    margin: 15px 0;
+    margin: 20px 0;
+  }
+  .play-again {
+    order: 3;
   }
 }
 @media screen and (max-width: 375px) {
@@ -410,7 +427,8 @@ body {
     width: 100%;
   }
 
-  .score {
+  .user-score,
+  .computer-score {
     width: 90px;
     height: 55%;
   }

@@ -7,12 +7,14 @@ const scissors = document.querySelector(".scissors");
 const playerScore = document.querySelector(".player-score");
 const compScore = document.querySelector(".comp-score");
 const text = document.querySelector(".winner-loser");
-const reset = document.querySelector(".reset");
 const rules = document.querySelector(".rules-btn");
 const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".close-btn");
 const mainSection = document.querySelector(".main");
 const inGame = document.querySelector(".in-game");
+const userSCORE = document.querySelector(".user-score");
+const computerSCORE = document.querySelector(".computer-score");
+const resetScore = document.querySelector(".reset-score");
 
 function compChoice() {
   const options = ["rock", "paper", "scissors"];
@@ -28,7 +30,6 @@ function game(userChoice) {
     case "paperrock":
       let addPlayer = playerCount++;
       playerScore.innerHTML = `${addPlayer}`;
-      text.textContent = `${userChoice} beats ${computerChoice}.`;
       mainSection.style.display = "none";
       inGame.style.display = "flex";
       inGame.innerHTML = ` <div class="player-pick">
@@ -49,9 +50,9 @@ function game(userChoice) {
     case "scissorsrock":
       let addComp = compCount++;
       compScore.innerHTML = `${addComp}`;
-      text.innerHTML = `${computerChoice} beats ${userChoice}.`;
       mainSection.style.display = "none";
       inGame.style.display = "flex";
+
       inGame.innerHTML = ` <div class="player-pick">
       <h1>You Picked</h1>
       <button class="${userChoice}"></button>
@@ -108,5 +109,11 @@ rules.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.classList.remove("show-modal");
 });
+
+// window.addEventListener("DOMContentLoaded", getPlayerStroage);
+// resetScore.addEventListener("click", () => {
+//   localStorage.removeItem("Player Score");
+//   localStorage.removeItem("Comp Score");
+// });
 
 main();
