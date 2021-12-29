@@ -46,5 +46,3 @@ Users should be able to:
 
 - Amr Ashebo
 - Twitter - [@amr_ashebo](https://twitter.com/amr_ashebo)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
