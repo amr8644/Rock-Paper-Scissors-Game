@@ -138,9 +138,5 @@ closeModal.addEventListener("click", () => {
 });
 
 // window.addEventListener("DOMContentLoaded", getPlayer);
-resetScore.addEventListener("click", () => {
-  localStorage.removeItem("highScorePlayer");
-  localStorage.removeItem("highScoreComp");
-});
 
 main();
