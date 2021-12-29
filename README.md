@@ -8,13 +8,9 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Overview
 
@@ -50,5 +46,3 @@ Users should be able to:
 
 - Amr Ashebo
 - Twitter - [@amr_ashebo](https://twitter.com/amr_ashebo)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
