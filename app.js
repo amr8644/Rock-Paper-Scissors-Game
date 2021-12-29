@@ -30,6 +30,7 @@ function game(userChoice) {
     case "paperrock":
       let addPlayer = playerCount++;
       playerScore.innerHTML = `${addPlayer}`;
+      // addPlayerToLocalStorage("Player", addPlayer);
       mainSection.style.display = "none";
       inGame.style.display = "flex";
       inGame.innerHTML = ` <div class="player-pick">
@@ -52,7 +53,6 @@ function game(userChoice) {
       compScore.innerHTML = `${addComp}`;
       mainSection.style.display = "none";
       inGame.style.display = "flex";
-
       inGame.innerHTML = ` <div class="player-pick">
       <h1>You Picked</h1>
       <button class="${userChoice}"></button>
@@ -92,6 +92,33 @@ function game(userChoice) {
   });
 }
 
+// const highScorePlayer =
+//   JSON.parse(localStorage.getItem("highScorePlayer")) || [];
+
+// const highScoreComp = JSON.parse(localStorage.getItem("highScoreComp")) || [];
+
+// function addPlayerToLocalStorage(name, point) {
+//   const scores = {
+//     user: name,
+//     score: point,
+//   };
+
+//   highScorePlayer.push(scores);
+//   localStorage.setItem("highScorePlayer", JSON.stringify(highScorePlayer));
+//   console.log(highScorePlayer);
+// }
+
+// function addCompToLocalStorage(name, point) {
+//   const scores = {
+//     user: name,
+//     score: point,
+//   };
+
+//   highScoreComp.push(scores);
+//   localStorage.setItem("highScoreComp", JSON.stringify(highScoreComp));
+//   console.log(highScoreComp);
+// }
+
 function main() {
   rock.addEventListener("click", () => {
     game("rock");
@@ -110,10 +137,10 @@ closeModal.addEventListener("click", () => {
   modal.classList.remove("show-modal");
 });
 
-// window.addEventListener("DOMContentLoaded", getPlayerStroage);
-// resetScore.addEventListener("click", () => {
-//   localStorage.removeItem("Player Score");
-//   localStorage.removeItem("Comp Score");
-// });
+// window.addEventListener("DOMContentLoaded", getPlayer);
+resetScore.addEventListener("click", () => {
+  localStorage.removeItem("highScorePlayer");
+  localStorage.removeItem("highScoreComp");
+});
 
 main();
